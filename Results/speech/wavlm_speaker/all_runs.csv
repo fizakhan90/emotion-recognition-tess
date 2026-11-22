@@ -1,0 +1,10 @@
+model,norm,split,seed,acc,uar,macro_f1
+speech_wavlm,speaker,split_OAF_to_YAF,seed0,0.5907142857142857,0.5907142857142856,0.5464425771815422
+speech_wavlm,speaker,split_OAF_to_YAF,seed1,0.6971428571428572,0.6971428571428572,0.679033076434588
+speech_wavlm,speaker,split_OAF_to_YAF,seed2,0.6164285714285714,0.6164285714285714,0.5912093410981113
+speech_wavlm,speaker,split_YAF_to_OAF,seed0,0.595,0.595,0.5353556950837515
+speech_wavlm,speaker,split_YAF_to_OAF,seed1,0.5835714285714285,0.5835714285714285,0.487101901267446
+speech_wavlm,speaker,split_YAF_to_OAF,seed2,0.6957142857142857,0.6957142857142857,0.615487599712721
+speech_wavlm,speaker,split_random,seed0,0.9952380952380953,0.9952380952380953,0.9952367721192396
+speech_wavlm,speaker,split_random,seed1,1.0,1.0,1.0
+speech_wavlm,speaker,split_random,seed2,0.9976190476190476,0.9976190476190476,0.9976188822636493

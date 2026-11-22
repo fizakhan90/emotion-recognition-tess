@@ -1,0 +1,9 @@
+,,acc,acc,uar,uar,macro_f1,macro_f1
+,,mean,std,mean,std,mean,std
+model,split,,,,,,
+text_bert,split_OAF_to_YAF,0.1429,0.0,0.1429,0.0,0.0446,0.0154
+text_bert,split_YAF_to_OAF,0.1429,0.0,0.1429,0.0,0.0446,0.0154
+text_bert,split_random,0.1429,0.0,0.1429,0.0,0.0357,0.0
+text_tfidf_logreg,split_OAF_to_YAF,0.1429,,0.1429,,0.0601,
+text_tfidf_logreg,split_YAF_to_OAF,0.1429,,0.1429,,0.0601,
+text_tfidf_logreg,split_random,0.0024,,0.0024,,0.0012,

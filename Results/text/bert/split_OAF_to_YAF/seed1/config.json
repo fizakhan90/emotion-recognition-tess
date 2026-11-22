@@ -1,0 +1,19 @@
+{
+ "splits": [
+  "split_OAF_to_YAF",
+  "split_YAF_to_OAF",
+  "split_random"
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "epochs": 40,
+ "lr": 0.001,
+ "batch": 32,
+ "feat_dir": null,
+ "out": "/kaggle/working/Results/text",
+ "split": "split_OAF_to_YAF",
+ "seed": 1
+}

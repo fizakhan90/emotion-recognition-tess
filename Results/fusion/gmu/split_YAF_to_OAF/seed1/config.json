@@ -1,0 +1,21 @@
+{
+ "fusion": "gmu",
+ "splits": [
+  "split_OAF_to_YAF",
+  "split_YAF_to_OAF",
+  "split_random"
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "epochs": 40,
+ "lr": 0.0005,
+ "batch": 32,
+ "feat_dir": null,
+ "train_text": "normal",
+ "out": "/kaggle/working/Results/fusion",
+ "split": "split_YAF_to_OAF",
+ "seed": 1
+}

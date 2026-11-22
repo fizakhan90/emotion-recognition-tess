@@ -1,0 +1,7 @@
+split,block,silhouette_emotion_test_speaker,silhouette_emotion_train_speaker,silhouette_speaker_all
+split_OAF_to_YAF,"Temporal block (speech, WavLM)",0.516,0.721,0.041
+split_OAF_to_YAF,"Contextual block (text, BERT)",-0.005,-0.005,-0.001
+split_OAF_to_YAF,Fusion block (scalar gate),0.606,0.93,0.032
+split_YAF_to_OAF,"Temporal block (speech, WavLM)",0.379,0.793,0.053
+split_YAF_to_OAF,"Contextual block (text, BERT)",-0.005,-0.005,-0.001
+split_YAF_to_OAF,Fusion block (scalar gate),0.465,0.907,0.053

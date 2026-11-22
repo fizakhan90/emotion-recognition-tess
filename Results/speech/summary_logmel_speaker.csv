@@ -1,0 +1,6 @@
+,,,acc,acc,uar,uar,macro_f1,macro_f1
+,,,mean,std,mean,std,mean,std
+model,norm,split,,,,,,
+speech_logmel,speaker,split_OAF_to_YAF,0.6436,0.0118,0.6436,0.0118,0.5893,0.0191
+speech_logmel,speaker,split_YAF_to_OAF,0.489,0.079,0.489,0.079,0.4353,0.0882
+speech_logmel,speaker,split_random,0.9937,0.0027,0.9937,0.0027,0.9936,0.0028
