@@ -1,0 +1,6 @@
+__pycache__/
+*.pt
+*.npz
+features/
+text_features/
+Results_backup.zip
