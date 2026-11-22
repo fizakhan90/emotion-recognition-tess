@@ -12,7 +12,9 @@ SPLITS = ["split_OAF_to_YAF", "split_YAF_to_OAF", "split_random"]
 def find_feat_dir(feat_dir=None):
     if feat_dir:
         return feat_dir
-    for root in ["/kaggle/working/features", "/kaggle/input", "./features"]:
+    for root in [os.environ.get("FEAT_DIR", ""), "/kaggle/working/features", "/kaggle/input", "./features"]:
+        if not root:
+            continue
         hits = glob.glob(f"{root}/**/meta.csv", recursive=True) + glob.glob(f"{root}/meta.csv")
         if hits:
             return os.path.dirname(hits[0])
@@ -99,9 +101,17 @@ def clean_text(s):
     return " ".join(str(s).lower().strip().split())
 
 
-def load_text(feat_dir, cache_dir="/kaggle/working/text_features"):
+def default_text_cache(feat_dir):
+    """Kaggle: /kaggle/working/text_features (inputs are read-only). Elsewhere: next to the features folder."""
+    if os.path.isdir("/kaggle/working"):
+        return "/kaggle/working/text_features"
+    return os.path.join(os.path.dirname(os.path.abspath(feat_dir)), "text_features")
+
+
+def load_text(feat_dir, cache_dir=None):
     """Frozen BERT last-layer token features for every clip's transcript.
     Returns meta, X (N, L, 768) float16, lengths (N,). Cached after the first run."""
+    cache_dir = cache_dir or default_text_cache(feat_dir)
     meta = pd.read_csv(f"{feat_dir}/meta.csv")
     os.makedirs(cache_dir, exist_ok=True)
     fx, fl = f"{cache_dir}/bert_tokens.npy", f"{cache_dir}/bert_lengths.npy"

@@ -15,8 +15,8 @@ import librosa
 import torch
 from sklearn.model_selection import train_test_split
 
-DATA_ROOT = "/kaggle/input"
-OUT = "/kaggle/working/features"
+DATA_ROOT = os.environ.get("TESS_DIR", "/kaggle/input")            # folder containing the TESS wav files
+OUT = os.environ.get("FEAT_DIR", "/kaggle/working/features")      # where features are written
 SR = 16000                    # WavLM expects 16 kHz
 MAX_SEC = 3.0                 # longest trimmed clip is ~2.9 s, so nothing gets cut
 MAX_LEN = int(SR * MAX_SEC)   # 48000 samples

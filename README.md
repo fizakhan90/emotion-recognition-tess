@@ -71,7 +71,22 @@ python analysis/analyze.py
 Or on Kaggle: paste `run_everything.py` into one cell (GPU + Internet on, TESS added as input) and use
 *Save & Run All*; it builds the features if missing, runs every step above and zips `Results/`.
 
-Every script accepts `--feat_dir` if the features are elsewhere. Test sets are used only by `test.py`;
+### Running outside Kaggle
+
+Paths default to Kaggle's folders. On any other machine, set two environment variables:
+
+```bash
+export TESS_DIR=/path/to/TESS          # folder that contains the TESS .wav files (any depth)
+export FEAT_DIR=$PWD/features          # where extracted features are written and read
+python data_prep/prepare_tess.py
+python models/speech_pipeline/train.py --features wavlm   # ... then the other commands above
+```
+
+(PowerShell: `$env:TESS_DIR="C:\path\to\TESS"`, `$env:FEAT_DIR="$PWD\features"`.)
+BERT text features are cached in a `text_features/` folder next to `FEAT_DIR` (on Kaggle: `/kaggle/working/text_features`).
+WavLM-Large and BERT-base are downloaded from Hugging Face on first use, so internet access is needed once.
+
+Every script also accepts `--feat_dir` if the features are elsewhere. Test sets are used only by `test.py`;
 model selection uses the validation split of the training speaker.
 
 ## Splits
